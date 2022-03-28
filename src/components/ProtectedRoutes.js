@@ -10,7 +10,6 @@ const ProtectedRoutes = () => {
         return <Outlet />
     } else { 
         return <Navigate to='/' />
-    }                    
-};                        
-
+    }                   
+};                      
 export default ProtectedRoutes;

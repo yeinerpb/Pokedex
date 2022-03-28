@@ -33,14 +33,15 @@ const Pokedex = () => {
     }
    
     return (
-        <div>
-            <h1>Pokedex</h1>
-            <p>Welcome {userName}</p>
+        <div className='beginning'>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
+            <h2 className='welcome'><b> Bienvenido <span> {userName}</span></b></h2>
             <div className="select">
-                <select onChange={typePokemon}>
-                    <option value=""></option>
+                <select className='type-pokemon' onChange={typePokemon}>
+                    <option>Filtrar por tipo</option>
                     {
-                        pokemonType.map(pokemonType =>(
+                        pokemonType.map(pokemonType => (
+                            
                             <option key={pokemonType.url} value={pokemonType.url}>
                                 {pokemonType.name}
                             </option>
@@ -49,27 +50,28 @@ const Pokedex = () => {
                 </select>
             </div>
             <form className="info-container" onSubmit={submit}>
-                <label htmlFor=""> Busca por nombre </label>
-                <input 
-                    type="text" 
+                <label htmlFor="">  </label>
+                <input
+                    type="text"
                     id="pokedex.name"
                     value={pokemonName}
                     onChange={e => setPokemonName(e.target.value)}
+                    placeholder='Buscar por nombre'
                 />
                 <button>Buscar</button>
             </form>
-            
-            <ul>
-            {
-                pokedex.map(pokedex =>(
-                   < PokedexCard 
-                        pokedexUrl={pokedex.url? pokedex.url: pokedex.pokemon?.url}   
-                        key={pokedex.name}
-                    />
-                ))
-            }
+
+            <ul className='pokedex-list'>
+                {
+                    pokedex.map(pokedex => (
+                        < PokedexCard
+                            pokedexUrl={pokedex.url ? pokedex.url : pokedex.pokemon?.url}
+                            key={pokedex.name}
+                        />
+                    ))
+                }
             </ul>
-            
+
         </div>
     );
 };

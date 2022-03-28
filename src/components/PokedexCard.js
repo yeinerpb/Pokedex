@@ -12,14 +12,16 @@ const PokedexCard = ({pokedexUrl}) => {
 
     console.log(pokedex);
     return (
-        <li className='pokedex.card'>
-            <Link to = {`/pokedex/${pokedex.id}`}>
-              {pokedex.name}           
+        <li className='col'>
+            <Link to={`/pokedex/${pokedex.id}`} className='pokedex-card' >
+
+                <h3> {pokedex.name}</h3>
+                <img src={pokedex.sprites?.other.dream_world.front_default} alt="" />
+                <p><b> Height: </b>{pokedex.height}</p>
+                <p><b> Weight: </b>{pokedex.weight}</p>
+                <p><b> Exp: </b>{pokedex.base_experience}</p>
+
             </Link>
-            <img src={pokedex.sprites?.other.dream_world.front_default} alt="" />
-            <p>Height: {pokedex.height}</p>
-            <p>Weight: {pokedex.weight}</p>
-            <p>Exp: {pokedex.base_experience}</p>
         </li>
     );
 };

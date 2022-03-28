@@ -13,11 +13,12 @@ const PokedexInfo = () => {
     }, [ id ])
 
     return (
-        <div>
+        <div className='info'>
             <h1>{pokedex.name}</h1>
             <img src={pokedex.sprites?.other.dream_world.front_default} alt="" />
-            <p>Height: {pokedex.height}</p>
-            <p>Weight: {pokedex.weight}</p>
+            <p><b> Height: </b>{pokedex.height}</p>
+            <p><b> Weight: </b>{pokedex.weight}</p>
+            <p><b> Exp: </b>{pokedex.base_experience}</p>
         </div>
     );
 };
