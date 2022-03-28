@@ -20,6 +20,7 @@ const PokedexCard = ({pokedexUrl}) => {
                 <p><b> Height: </b>{pokedex.height}</p>
                 <p><b> Weight: </b>{pokedex.weight}</p>
                 <p><b> Exp: </b>{pokedex.base_experience}</p>
+                <p><b> Type: </b>{pokedex.types?.[0]?.type.name}/{pokedex.types?.[1]?.type.name}</p>
 
             </Link>
         </li>
